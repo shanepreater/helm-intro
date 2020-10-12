@@ -1,0 +1,18 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: {{ include "nginx.fullname" . }}-static
+  labels:
+    {{- include "nginx.labels" . | nindent 4 }}
+data:
+  index.html: |
+    <html>
+      <head>
+        <title>Example deployment with NGINX</title>
+      </head>
+      <body>
+        <h1>NGINX example deployment</h1>
+        <p>This is a simple helm deployment to show the main points.</p>
+        <p.Enjoy!</p>
+      </body>
+    </html>
